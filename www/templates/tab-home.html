@@ -1,0 +1,26 @@
+<ion-view title="FoodMe">
+  <ion-content>
+	<div class="list card" ng-repeat="entry in User.entries | orderObjectBy:'timestamp':true  | limitTo : 20">
+	  <div class="item item-avatar">
+	    <img src="{{entry.img}}">
+	    <h2>{{entry.name ? entry.name : 'Processing pending...'}}</h2>
+	    <p>{{entry.timestamp | timeToMealCategory}} | {{entry.timestamp | moment}}</p>
+	  </div>
+
+	  <div class="item item-image">
+	    <img src="{{entry.img}}">
+	  </div>
+
+	  <a class="item item-icon-left assertive" href="#">
+	    <i class="icon ion-thumbsup"></i>
+	    Like
+	  </a>
+	</div>
+
+    <!-- <ion-list>
+      <ion-item ng-repeat="friend in friends" type="item-text-wrap" href="#/tab/friend/{{friend.id}}">
+        {{friend.name}}
+      </ion-item>
+    </ion-list> -->
+  </ion-content>
+</ion-view>
